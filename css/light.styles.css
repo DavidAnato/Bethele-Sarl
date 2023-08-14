@@ -1,0 +1,396 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: century-gothic, sans-serif;
+    background: #f1f1f1;
+    color: #111;
+}
+
+hr {
+    border: #aaa solid 1px;
+    margin-bottom: 0;
+}
+
+/* Styles pour le bouton de thème */
+#themeBtn {
+    width: 40px; /* Ajustez la taille selon vos préférences */
+    height: 40px; /* Ajustez la taille selon vos préférences */
+    border-radius: 50%; /* Pour rendre le bouton circulaire */
+    background-color: #fff; /* Couleur de fond du bouton */
+    cursor: pointer; /* Pour indiquer que c'est un élément cliquable */
+    position: absolute;
+    right: 100px;
+    color:#000;
+  }
+  
+  #themeBtn:hover {
+    background-color: #111;
+    color:#fff;
+  }
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: #ddd;
+    transition: top 0.3s ease-in-out;
+}
+
+
+header.sticky {
+  position: fixed;
+  top: 0; /* Le header reste en haut de la page lorsque sticky */
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  animation: fadeInDown 0.3s ease-in-out; /* Animation d'entrée */
+}
+
+/* Nouvelle animation pour la sortie */
+header.fadeOutUp {
+  animation: fadeOutUp 0.3s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0; /* Opacité à 0 pour l'effet d'entrée */
+    transform: translateY(-100%); /* Position de départ de l'animation (haut de la page) */
+  }
+  to {
+    opacity: 1; /* Opacité à 1 pour le header visible */
+    transform: translateY(0); /* Position finale de l'animation (position sticky) */
+  }
+}
+
+/* Animation pour la sortie */
+@keyframes fadeOutUp {
+  from {
+    opacity: 1; /* Opacité à 1 pour le header visible */
+    transform: translateY(0); /* Position de départ de l'animation (position sticky) */
+  }
+  to {
+    opacity: 0; /* Opacité à 0 pour l'effet de sortie */
+    transform: translateY(-100%); /* Position finale de l'animation (haut de la page) */
+  }
+}
+
+
+#logo > img {
+    width: 50px;
+    filter: none;
+}
+
+nav {
+    display: inline-block;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+nav li a {
+    color: #111;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    font-size: calc(.5rem + .9vw);
+}
+
+nav li a:hover, nav li a:focus {
+    color: #dfa300;
+    /* font-weight: bold; */
+}
+
+/* Section Accueil */
+#home {
+    background: url(../images/home.jpeg) no-repeat fixed;
+    background-size: cover;
+}
+
+#banner {
+    background: rgba(255, 255, 255, 0.29);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    padding: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+#banner h1 {
+    color: #111;
+    font-size: calc(2rem + 5vw);
+    margin-bottom: 0px;
+}
+
+#banner h2 {
+    color: #111;
+    font-size: calc(1rem + 0.5vw);
+}
+
+#banner a {
+    color: #111;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border: 2px solid #111;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+#banner a:hover, #banner a:focus {
+    background-color: #111;
+    color: #fff;
+}
+
+/* Section A propos */
+#about {
+    padding: 20px;
+    text-align: center;
+}
+
+#about #paragraphs {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Media Query pour les tablettes et les appareils mobiles */
+@media (max-width: 900px) {
+    #about #paragraphs {
+        flex-wrap: wrap;
+    }
+}
+
+#about #paragraphs p {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    max-height: 50vh;
+    border-radius: 10px;
+    box-shadow: #555 0px 0px 10px;
+    overflow: auto;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+/*  Section Nos Services  */
+#services {
+    padding: 20px;
+    text-align: center;
+    padding-left: 0px;
+}
+
+#services ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+#services ul li {
+    list-style: none;
+    padding: 10px;
+    height: 300px;
+    background-size: cover;
+    font-size: calc(1rem + 0.5vw);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-blend-mode: multiply;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#offset {
+    background-image: url(/images/offset.jpeg);
+}
+
+#bigFormat {
+    background: url(/images/bigFormat.jpeg) center;
+}
+
+#brochure {
+    background: url(/images/brochure.jpg) center;
+}
+
+#visiteCard {
+    background: url(/images/visiteCard.jpg) center;
+}
+
+#book {
+    background: url(/images/book.jpg) center;
+}
+
+#other {
+    background: url(/images/other.png) center, linear-gradient(#333, #999);
+}
+
+#services ul li:hover, #services ul li:focus {
+    background-blend-mode: normal;
+}
+
+#services ul li:hover span, #services ul li:focus span {
+    background: rgba(255, 255, 255, 0.9);
+    text-shadow: 5px 5px 10px #000;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Section Portfolio */
+#portfolio {
+    padding: 20px;
+    text-align: center;
+}
+
+#portfolio h2 {
+    margin-bottom: 20px;
+}
+
+#portfolio .images {
+    display: grid;
+    grid-gap: 10px;
+    margin-bottom: 40px;
+}
+
+#portfolio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Utiliser une colonne par défaut pour les appareils mobiles */
+#portfolio .images {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 576px) {
+    /* Deux colonnes pour les appareils ayant une largeur d'écran minimale de 576 pixels */
+    #portfolio .images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    /* Trois colonnes pour les appareils ayant une largeur d'écran minimale de 768 pixels */
+    #portfolio .images {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    /* Quatre colonnes pour les appareils ayant une largeur d'écran minimale de 992 pixels */
+    #portfolio .images {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* contact */
+#contact {
+    text-align: center;
+    color: #111;
+    background-color: #f1f1f1;
+    padding: 40px 0;
+    margin-top: 0;
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+}
+
+#contact p {
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    flex-basis: 100px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    background-color: #f1f1f1;
+    color: #111;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #aaa;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #777;
+}
+
+/* Animation pour les champs du formulaire */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom: 5px #dfa300 solid;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #ddd;
+    color: #111;
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #dfa300;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
