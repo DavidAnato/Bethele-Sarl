@@ -14,20 +14,20 @@ hr {
 
 /* Styles pour le bouton de thème */
 #themeBtn {
-    width: 40px; /* Ajustez la taille selon vos préférences */
-    height: 40px; /* Ajustez la taille selon vos préférences */
-    border-radius: 50%; /* Pour rendre le bouton circulaire */
-    background-color: #fff; /* Couleur de fond du bouton */
-    cursor: pointer; /* Pour indiquer que c'est un élément cliquable */
-    position: absolute;
-    right: 100px;
-    color:#000;
-  }
-  
-  #themeBtn:hover {
-    background-color: #111;
-    color:#fff;
-  }
+  width: 40px; /* Ajustez la taille selon vos préférences */
+  height: 40px; /* Ajustez la taille selon vos préférences */
+  border-radius: 50%; /* Pour rendre le bouton circulaire */
+  background-color: #333; /* Couleur de fond du bouton */
+  cursor: pointer; /* Pour indiquer que c'est un élément cliquable */
+  position: absolute;
+  right: calc(10px + 5vw);
+}
+
+#themeBtn:hover {
+  background-color: #fff;
+  color:#000;
+}
+
 /* Header */
 
 header {
