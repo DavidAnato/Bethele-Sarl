@@ -109,9 +109,6 @@ function handleHeaderSticky() {
 }
 
 
-// Nav Responsive
-
-
 // Ajouter un écouteur d'événement pour gérer le changement d'état du header lors du défilement
 window.addEventListener("scroll", handleHeaderSticky);
 // Ajouter un écouteur d'événement pour gérer le changement d'état du header lors du redimensionnement de la fenêtre
